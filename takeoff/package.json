@@ -1,44 +1,45 @@
 {
-  "name": "Takeoff",
-  "version": "1.4.3",
-  "main": "Gruntfile.js",
-  "scripts": {
-   "build": "grunt"
+  "name": "takeoff",
+  "version": "1.0.0",
+  "description": "Takeoff Crafts CMS",
+  "main": "index.js",
+  "dependencies": {
+    "autoprefixer": "^8.1.0",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-imagemin": "^2.0.1",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-notify": "^0.4.5",
+    "grunt-postcss": "^0.9.0",
+    "grunt-responsive-images": "^1.10.1",
+    "grunt-sass": "^2.1.0",
+    "jshint-stylish": "^2.2.1",
+    "load-grunt-tasks": "^3.5.2",
+    "time-grunt": "^1.4.0"
   },
   "devDependencies": {
-    "autoprefixer": "^6.1.2",
-    "babel-preset-es2015": "^6.24.1",
-    "grunt": "^0.4.5",
-    "grunt-babel": "^6.0.0",
-    "grunt-browser-sync": "^2.2.0",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-concat": "^0.4.0",
-    "grunt-contrib-copy": "^0.5.0",
-    "grunt-contrib-cssmin": "^0.9.0",
-    "grunt-contrib-imagemin": "^0.8.1",
-    "grunt-contrib-uglify": "^2.3.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-eslint": "^19.0.0",
-    "grunt-notify": "^0.4.5",
-    "grunt-postcss": "^0.7.1",
-    "grunt-responsive-images": "^0.1.4",
-    "grunt-sass": "^1.0.0",
-    "grunt-svg2png": "^0.2.5",
-    "grunt-svgmin": "^3.2.0",
-    "grunt-svgstore": "^0.5.0",
-    "grunt-webfont": "^0.5.3",
-    "load-grunt-tasks": "^0.4.0",
-    "node-sass": "^4.5.2",
-    "time-grunt": "^1.0.0"
+    "grunt": "^1.0.2",
+    "grunt-contrib-jshint": "^1.1.0"
+  },
+  "scripts": {
+    "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/statikbe/takeoff.git"
+    "url": "git+https://github.com/designosource/gram.git"
   },
-  "author": "Statik",
+  "keywords": [
+    "Craft",
+    "CMS"
+  ],
+  "author": "Designosource",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/statikbe/takeoff/issues"
+    "url": "https://github.com/designosource/gram/issues"
   },
-  "homepage": "https://github.com/statikbe/takeoff"
+  "homepage": "https://github.com/designosource/gram#readme"
 }
