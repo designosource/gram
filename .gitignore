@@ -3,3 +3,4 @@
 !/craft/storage/logo/*
 .DS_Store
 /takeoff/node_modules/
+/.idea
