@@ -1,6 +1,7 @@
 # Craft Storage (cache) [http://buildwithcraft.com/help/craft-storage-gitignore]
 /craft/storage/*
 !/craft/storage/logo/*
+/.idea
 .DS_Store
 /takeoff/node_modules/
-/.idea
+node_modules
