@@ -10,7 +10,7 @@
 return array(
 
 	// Base site URL
-	'siteUrl' => 'http://localhost:8888/gram/public/',
+	'siteUrl' => null,
 
 	// Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
 	'environmentVariables' => array(),
