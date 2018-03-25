@@ -1,3 +1,54 @@
+/*
+	COLORS :
+	Rood : #981C1F
+	Lichtgrijs: #DBE5EF
+	Donkergrijs: #3D3D3D
+*/
 body {
-  background-color: purple;
+  font-family: 'Roboto', sans-serif; }
+
+/* HEADER */
+.header a {
+  display: block;
+  width: 120px;
+  padding: 0;
+  margin: 0; }
+
+.header a img {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+/* HERO */
+.header .hero {
+  display: block;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+.header .hero-max {
+  height: 95vh; }
+
+.header .hero-min {
+  height: 50vh; }
+
+.header h1 {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 10%;
+  color: white;
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1em; }
+
+/* CONTENTBUILDER */
+img.cb-image {
+  display: block;
+  width: 100%; }
+
+/* FOOTER */
+footer {
+  background-color: #981C1F;
   color: white; }

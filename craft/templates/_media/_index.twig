@@ -1,0 +1,22 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+
+	<div class="section section--default">
+		<div class="container">
+			<div class="grid">
+				<div class="row">
+					{% for media in craft.entries.section('mediaImage') %}
+						<div class="col-3">
+							<a href="#">
+								<img class="cb-image" src="{{ media.image.first().getUrl() }}">
+							</a>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+	
+{% endblock %}

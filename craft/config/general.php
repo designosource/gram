@@ -30,4 +30,14 @@ return array(
 	// Dev Mode (see https://craftcms.com/support/dev-mode)
 	'devMode' => true,
 
+	//generate transforms before page load => no cpresources
+	'generateTransformsBeforePageLoad' => true,
+
+	'extraAllowedFileExtensions' => 'json',
+
+	'environmentVariables' => [
+        'basePath' => $_SERVER['DOCUMENT_ROOT'],
+        'baseUrl' => strtolower((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://' : 'http://') . $_SERVER['SERVER_NAME']),
+    ],
+
 );

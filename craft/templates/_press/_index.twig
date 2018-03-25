@@ -1,0 +1,26 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+	<div class="section section--default">
+		<div class="container">
+			<div class="grid">
+				<div class="row">
+					{% for item in craft.entries.section('press') %}
+						<div class="col-4">
+							<a href="{{ item.url }}">
+								<div class="block">
+									<img class="cb-image" src="{{ siteUrl }}{{ item.overviewImage.first().getUrl() }}">
+									<p><small>{{ entry.postDate|date('l d F Y'|t) }}</small></p>
+									<h3>{{ item.overviewTitle }}</h3>
+									<p>{{ item.overviewDescription }}</p>
+								</div>
+							</a>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+	
+{% endblock %}

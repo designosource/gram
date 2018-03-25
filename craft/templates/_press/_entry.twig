@@ -1,0 +1,19 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+	<div class="section section--default">
+		<div class="container">
+			<h1>{{ entry.title }}</h1>
+			<p>{{ entry.intro }}</p>
+			<p><small>{{ entry.postDate|date('l d F Y'|t) }}</small></p>
+		</div>
+	</div>
+
+	<div class="section section--default">
+		<div class="container">
+			{% include '_snippet/_content/_contentBuilder' %}
+		</div>
+	</div>
+	
+{% endblock %}
