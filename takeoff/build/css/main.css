@@ -52,3 +52,7 @@ img.cb-image {
 footer {
   background-color: #981C1F;
   color: white; }
+
+.test-intro {
+  background-color: blue;
+  font-size: 5em; }
