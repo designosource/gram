@@ -6,9 +6,75 @@
 	<div class="section section--default">
 		<div class="container">
 			<div class="grid">
-				<h1>{{ entry.title }}</h1>
+				<h2>{{ "Wat is gram"|t }}</h2>
+				<div class="row">
+					<div class="col-6">{{ entry.text }}</div>
+					<div class="col-6">
+						{% if entry.image|length %}
+							<img class="cb-image" src="{{ entry.image.first().getUrl() }}">
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section section--default">
+		<div class="container">
+			<div class="grid">
+				<h2>{{ "Nieuws"|t }}</h2>
+				<div class="row">
+					{% set press = craft.entries.section('press') %}
+					{% for item in press.limit(3) %}
+						<div class="col-4">
+							{% include '_snippet/_item/_news' %}
+						</div>
+					{% endfor %}
+					{% if press.count() > 3 %}
+						<a href="{{ craft.entries.section('pressOverview').first().getUrl() }}">{{ "Meer nieuws"|t }}</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section section--default">
+		<div class="container">
+			<div class="grid">
+				<h2>{{ "In de media"|t }}</h2>
+				<div class="row">
+					{% set mediaImages = craft.entries.section('mediaImage') %}
+					{% for media in mediaImages.limit(3) %}
+						<div class="col-4">
+							<a data-fancybox="gallery" href="{{ media.image.first().getUrl() }}">
+								<img class="cb-image" src="{{ media.image.first().getUrl() }}">
+							</a>
+						</div>
+					{% endfor %}
+					{% if mediaImages.count() > 3 %}
+						<a href="{{ craft.entries.section('mediaOverview').first().getUrl() }}">{{ "Meer foto's"|t }}</a>
+					{% endif %}
+				</div>
 			</div>
 		</div>
 	</div>
 	
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

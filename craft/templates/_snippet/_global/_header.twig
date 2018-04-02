@@ -9,12 +9,16 @@
 						</a>
 					</div>
 					<div class="col-8">
-						<nav>
-							{{ craft.amNav.getNav("mainNavigation") }}
-							<ul>
-								<li></li>
-							</ul>
-						</nav>
+						{% if craft.amNav.getNavRaw("mainNavigation") is defined %}
+							<nav>
+								<ul>
+									{% set nav = craft.amNav.getNavRaw("mainNavigation") %}
+									{% for node in nav %}
+										<li><a href="{{ node.url }}" class="{{ node.listClass }}" {% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a></li>
+									{% endfor %}
+								</ul>
+							</nav>
+						{% endif %}
 					</div>
 				</div>
 			</div>

@@ -9,13 +9,47 @@
 						</a>
 					</div>
 					<div class="col-3">
-						contact
+						<h4>Contacteer ons</h4>
+						<ul>
+							{% if contactInfo.email|length %}
+								<li><a href="mailto:{{ contactInfo.email }}">{{ contactInfo.email }}</a></li>
+							{% endif %}
+							{% if contactInfo.facebook|length %}
+								<li><a target="_blank" href="{{ contactInfo.facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+							{% endif %}
+							{% if contactInfo.instagram|length %}
+								<li><a target="_blank" href="{{ contactInfo.instagram }}"><i class="fab fa-instagram"></i></i></a></li>
+							{% endif %}
+							{% if contactInfo.twitter|length %}
+								<li><a target="_blank" href="{{ contactInfo.twitter }}"><i class="fab fa-twitter"></i></i></a></li>
+							{% endif %}
+							{% if contactInfo.linkedin|length %}
+								<li><a target="_blank" href="{{ contactInfo.linkedin }}"><i class="fab fa-linkedin-in"></i></a></li>
+							{% endif %}
+						</ul>
 					</div>
 					<div class="col-3">
-						navigatie
+						<h4>Navigatie</h4>
+						{% if craft.amNav.getNavRaw("mainNavigation") is defined %}
+							<nav>
+								<ul>
+									{% set nav = craft.amNav.getNavRaw("mainNavigation") %}
+									{% for node in nav %}
+										<li><a href="{{ node.url }}" class="{{ node.listClass }}" {% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a></li>
+									{% endfor %}
+								</ul>
+							</nav>
+						{% endif %}
 					</div>
 					<div class="col-3">
-						handige links
+						<h4>Handige links</h4>
+						{% if handigeLinks.handigelinks|length %}
+							<ul>
+								{% for item in handigeLinks.handigelinks %}
+									<li>{{ item.links.htmlLink }}</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
 					</div>
 				</div>
 			</div>
