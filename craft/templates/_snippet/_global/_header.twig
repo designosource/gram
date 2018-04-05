@@ -9,23 +9,29 @@
 						</a>
 					</div>
 					<div class="col-8">
-						<nav>
-							{{ craft.amNav.getNav("mainNavigation") }}
-							<ul>
-								<li></li>
-							</ul>
-						</nav>
+						{% if craft.amNav.getNavRaw("mainNavigation") is defined %}
+							<nav>
+								<ul>
+									{% set nav = craft.amNav.getNavRaw("mainNavigation") %}
+									{% for node in nav %}
+										<li><a href="{{ node.url }}" class="{{ node.listClass }}" {% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a></li>
+									{% endfor %}
+								</ul>
+							</nav>
+						{% endif %}
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="section section--default">
-		<div class="hero{% if entry.getSection().handle == 'home' %} hero-max{% else %} hero-min{% endif %}"
-		style="background-image: url('{{ siteUrl }}img/work-image-min-min.jpg')">
-			{% if entry.getSection().handle != 'home' and entry.title|length %}
-				<h1>{{ entry.title }}</h1>
-			{% endif %}
-		</div>
+		{% if entry is defined %}
+			<div class="hero{% if entry.getSection().handle == 'home' %} hero-max{% else %} hero-min{% endif %}"
+			style="background-image: url('{{ siteUrl }}img/work-image-min-min.jpg')">
+				{% if entry.getSection().handle != 'home' and entry.title|length %}
+					<h1>{{ entry.title }}</h1>
+				{% endif %}
+			</div>
+		{% endif %}
 	</div>
 </div>

@@ -1,0 +1,21 @@
+<div class="block">
+	<div class="grid">
+		<div class="row">
+			{% if block.video1|length %}
+				<div class="col-lg-4">
+					{{ craft.embedder.embed (block.video1, {max_width:350, max_height:250}) }}
+				</div>
+			{% endif %}
+			{% if block.video2|length %}
+				<div class="col-lg-4">
+					{{ craft.embedder.embed (block.video2, {max_width:350, max_height:250}) }}
+				</div>
+			{% endif %}
+			{% if block.video3|length %}
+				<div class="col-lg-4">
+					{{ craft.embedder.embed (block.video3, {max_width:350, max_height:250}) }}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</div>

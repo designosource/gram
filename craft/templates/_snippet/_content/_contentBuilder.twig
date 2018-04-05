@@ -1,3 +1,18 @@
-{% for block in entry.contentBuilder %}
-    {% include '_snippet/_content/_block/_'~block.type.handle %}
+{% for row in entry.contentBuilder.level(1) %}
+    {% switch row.type.handle %}
+        {% case 'block' %}
+            <div class="section">
+                <div class="container">
+                    {% if row.children is not empty %}
+       		       		{% for block in row.children %}
+                            {% if block.status == 'enabled' %}
+                                    
+                                {% include '_snippet/_content/_block/_'~block.type.handle ignore missing %}
+                               
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>  
+    {% endswitch %}
 {% endfor %}

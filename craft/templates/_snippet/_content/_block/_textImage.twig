@@ -7,6 +7,9 @@
             </div>
             <div class="col-6">
                 <div class="spacer text--intro">
+                    {% if block.blockTitle|length %}
+                        <h2>{{ block.blockTitle }}</h2>
+                    {% endif %}
                     {{ block.text }}
                 </div>
             </div>
@@ -19,6 +22,9 @@
         <div class="row">
             <div class="col-6">
                 <div class="spacer text--intro">
+                    {% if block.blockTitle|length %}
+                        <h2>{{ block.blockTitle }}</h2>
+                    {% endif %}
                     {{ block.text }}
                 </div>
             </div>
