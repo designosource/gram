@@ -1,25 +1,41 @@
-/*
-	COLORS :
-	Rood : #981C1F
-	Lichtgrijs: #DBE5EF
-	Donkergrijs: #3D3D3D
-*/
-body {
-  font-family: 'Roboto', sans-serif; }
+.header h1 {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 10%;
+  color: #fff;
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1em; }
 
-/* HEADER */
 .header a {
+  color: #828282;
   display: block;
   width: 120px;
   padding: 0;
   margin: 0; }
+  .header a img {
+    display: block;
+    width: 100%;
+    height: 100%; }
 
-.header a img {
-  display: block;
-  width: 100%;
+.header a.active {
+  color: #981C1F; }
+
+.header nav {
   height: 100%; }
+  .header nav ul {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
 
-/* HERO */
 .header .hero {
   display: block;
   width: 100%;
@@ -27,6 +43,13 @@ body {
   background-size: cover;
   background-position: center; }
 
+.header .hero-max {
+  height: 95vh; }
+
+.header .hero-min {
+  height: 50vh; }
+
+/* HERO */
 .header .hero-max {
   height: 95vh; }
 
@@ -43,6 +66,10 @@ body {
   font-weight: bold;
   letter-spacing: 0.1em; }
 
+body {
+  font-family: 'Roboto', sans-serif; }
+
+/* HEADER */
 /* CONTENTBUILDER */
 img.cb-image {
   display: block;
@@ -54,5 +81,4 @@ footer {
   color: white; }
 
 .test-intro {
-  background-color: blue;
-  font-size: 5em; }
+  color: red; }

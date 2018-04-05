@@ -9,16 +9,21 @@
 						</a>
 					</div>
 					<div class="col-8">
-						{% if craft.amNav.getNavRaw("mainNavigation") is defined %}
-							<nav>
-								<ul>
-									{% set nav = craft.amNav.getNavRaw("mainNavigation") %}
-									{% for node in nav %}
-										<li><a href="{{ node.url }}" class="{{ node.listClass }}" {% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a></li>
-									{% endfor %}
-								</ul>
-							</nav>
-						{% endif %}
+						{% set nav = craft.amNav.getNavRaw("mainNavigation") %}
+						{% macro addNodeToNavigation(node, index) %}
+							{%- set nodeClasses = [] -%}
+						    {%- if node.active or node.hasActiveChild -%}
+						        {%- set nodeClasses = nodeClasses|merge(['active']) -%}
+						    {%- endif -%}
+							<li><a href="{{ node.url }}" class="{{ node.listClass }} {{ nodeClasses|join(' ') }}" {% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a></li>
+						{% endmacro %}
+						<nav>
+						    <ul>
+						        {% for node in nav %}
+						            {{ _self.addNodeToNavigation(node, loop.index) }}
+						        {% endfor %}
+						    </ul>
+						</nav>
 					</div>
 				</div>
 			</div>
