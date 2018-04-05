@@ -48,6 +48,9 @@ img.cb-image {
   display: block;
   width: 100%; }
 
+.test-intro {
+  color: blue; }
+
 /* FOOTER */
 footer {
   background-color: #981C1F;
