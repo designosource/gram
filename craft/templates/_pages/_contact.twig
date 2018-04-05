@@ -2,13 +2,52 @@
 
 {% block content %}
 
+<div class="section section--default">
+	<div class="container">
+		<div class="grid">
+			<div class="row">
+				<div class="col-6">
+					<h2>Contacteer ons</h2>
+					<div>{{ entry.text }}</div>
+				</div>
+				<div class="col-6">
 
-	<div class="section section--default">
-		<div class="container">
-			<div class="grid">
-				
+					{% macro errorList(errors) %}
+						{% if errors %}
+							<ul class="errors">
+								{% for error in errors %}
+									<li>{{ error }}</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					{% endmacro %}
+
+					{% from _self import errorList %}
+
+					<form method="post" action="" accept-charset="UTF-8">
+						{{ getCsrfInput() }}
+						<input type="hidden" name="action" value="contactForm/sendMessage">
+						<input type="hidden" name="redirect" value="contact/bedankt?from={fromName}">
+
+						<input id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}" placeholder="Naam">
+						{{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+
+						<input id="fromEmail" type="email" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}" placeholder="Email">
+						{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+
+						<input id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}" placeholder="Onderwerp">
+						{{ message is defined and message ? errorList(message.getErrors('subject')) }}
+
+						<textarea rows="10" cols="40" id="message" name="message" placeholder="Bericht">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
+						{{ message is defined and message ? errorList(message.getErrors('message')) }}
+
+						<input type="submit" value="Verzenden">
+					</form>
+
+				</div>		
 			</div>
 		</div>
 	</div>
-	
+</div>
+
 {% endblock %}

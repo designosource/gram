@@ -54,4 +54,5 @@ footer {
   color: white; }
 
 .test-intro {
-  color: red; }
+  background-color: blue;
+  font-size: 5em; }

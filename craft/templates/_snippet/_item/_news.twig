@@ -1,0 +1,10 @@
+<a href="{{ item.url }}">
+	<div class="block">
+		{% if item.overviewImage|length %}
+			<img class="cb-image" src="{{ siteUrl }}{{ item.overviewImage.first().getUrl() }}">
+		{% endif %}
+		<p><small>{{ item.postDate|date('l d F Y'|t) }}</small></p>
+		<h3>{{ item.overviewTitle ? item.overviewTitle : item.title }}</h3>
+		<div>{{ item.overviewDescription }}</div>
+	</div>
+</a>

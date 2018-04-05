@@ -1,0 +1,55 @@
+{% if block.position == 'left' %}
+<div class="block">
+    <div class="grid">
+        <div class="row">
+            <div class="col-6">
+                <img class="cb-image" src="{{ block.image.first().getUrl() }}">
+            </div>
+            <div class="col-6">
+                <div class="spacer text--intro">
+                    {% if block.blockTitle|length %}
+                        <h2>{{ block.blockTitle }}</h2>
+                    {% endif %}
+                    <div class="grid">
+                        <div class="row">
+                            <div class="col-6">
+                                {{ block.text }}
+                            </div>
+                            <div class="col-6">
+                                {{ block.textSecondColumn }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="block">
+    <div class="grid">
+        <div class="row">
+            <div class="col-6">
+                <div class="spacer text--intro">
+                    {% if block.blockTitle|length %}
+                        <h2>{{ block.blockTitle }}</h2>
+                    {% endif %}
+                    <div class="grid">
+                        <div class="row">
+                            <div class="col-6">
+                                {{ block.text }}
+                            </div>
+                            <div class="col-6">
+                                {{ block.textSecondColumn }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <img class="cb-image" src="{{ block.image.first().getUrl() }}">
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

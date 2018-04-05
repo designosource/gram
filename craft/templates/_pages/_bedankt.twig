@@ -1,0 +1,29 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+{% set contact = craft.entries.section('contact').first() %}
+
+	<div class="section section--default">
+		<div class="container">
+			<div class="grid">
+				<div class="row">
+					<div class="col-6">
+						<h2>Contacteer ons</h2>
+						<div>{{ contact.text }}</div>
+					</div>
+					<div class="col-6">
+						{% if craft.request.getQuery('from')|length %}
+							{% set name = craft.request.getQuery('from') %}
+							<h2>Bedankt voor je bericht, {{ name }}</h2>
+						{% else %}	
+							<h2>Bedankt voor je bericht</h2>
+						{% endif %}
+						<p>We proberen zo snel mogelijk je vraag te beantwoorden.</p>
+					</div>		
+				</div>
+			</div>
+		</div>
+	</div>
+	
+{% endblock %}
