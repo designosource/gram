@@ -1,22 +1,12 @@
 @import "_colors.scss";
+@import "_fonts.scss";
 @import "header.scss";
-
-body {
-	font-family: 'Roboto', sans-serif;
-}
-
-/* HEADER */
+@import "footer.scss";
 
 /* CONTENTBUILDER */
 img.cb-image {
 	display: block;
 	width: 100%;
-}
-
-/* FOOTER */
-footer {
-	background-color: $gram_red;
-	color: white;
 }
 
 .test-intro {

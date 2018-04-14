@@ -1,0 +1,67 @@
+$roboto : 'Roboto', sans-serif;
+$lato : 'Lato', sans-serif;
+
+$fw-regular : 400;
+$fw-medium : 500;
+$fw-bold : 700;
+$fw-black : 900;
+
+/* Font-sizes:
+11px = 0.61rem
+12px = 0.67rem
+14px = 0.78rem
+16px = 0.88rem
+18px = 1rem
+22px = 1.22rem
+24px = 1.33rem
+36px = 2rem
+60px = 3.33rem
+*/
+
+html, body, p {
+    font-family: $roboto;
+    font-weight: $fw-regular;
+    font-size: 18px;
+    color: $gram_dark_grey;
+}
+
+h1 {
+    font-weight: $fw-bold;
+    font-size: 3.33rem;
+    color: $white;
+    text-align: center;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    line-height: 50vh;
+}
+
+h2 {
+    font-weight: $fw-bold;
+    font-size: 2rem;
+    color: $gram_red;
+}
+
+h2::before {
+    content: '';
+    display: block;
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-top: 5px solid $gram_light_grey;
+    border-left: 5px solid $gram_light_grey;
+    top: 1rem;
+    left: -1rem;
+}
+
+h3 {
+    font-family: $lato;
+    font-weight: $fw-black;
+    font-size: 1.22rem;
+    color: $black;
+}
+
+h4 {
+    font-weight: $fw-bold;
+    font-size: 0.88rem;
+    color: $white;
+}
