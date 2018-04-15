@@ -7,9 +7,15 @@ footer {
         height: 170px;
         padding-top: 3rem;
 
-        img {
-            width: auto;
-            height: 100%;
+        .col-3:first-child {
+            img {
+                width: auto;
+                height: 100%;
+            }
+
+            @media screen and (max-width: 1024px) {
+                display: none;
+            }
         }
 
         ul {
@@ -41,21 +47,40 @@ footer {
                     }
                 }
             }
+
+            @media screen and (max-width: 1024px) {
+                flex: 0 0 100%;
+                max-width: 100%;
+                text-align: center;
+
+                ul {
+                    justify-content: center;
+                }
+            }
         }
-        nav {
-            height: 100%;
 
-            ul {
+        .col-3:nth-child(3) {
+            nav {
                 height: 100%;
-                flex-direction: column;
 
+                ul {
+                    height: 100%;
+                    flex-direction: column;
+                }
+            }
 
+            @media screen and (max-width: 1024px) {
+                display: none;
             }
         }
 
         .col-3:last-child {
             ul {
                 display: block;
+            }
+
+            @media screen and (max-width: 1024px) {
+                display: none;
             }
         }
     }

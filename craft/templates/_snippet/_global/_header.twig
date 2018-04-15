@@ -4,7 +4,7 @@
 			<div class="grid">
 				<div class="row">
 					<div class="col-4">
-						<a href="{{ siteUrl }}">
+						<a href="{{ siteUrl }}" class="home">
 							<img src="{{ siteUrl }}{{ branding.image.first().getUrl('brandingLogo') }}">
 						</a>
 					</div>
@@ -17,7 +17,8 @@
 						    {%- endif -%}
 							<li><a href="{{ node.url }}" class="{{ node.listClass }} {{ nodeClasses|join(' ') }}" {% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a></li>
 						{% endmacro %}
-						<nav>
+						<nav class="topnav">
+							<a href="javascript:void(0);" class="icon" onclick="openNav()">&#9776;</a>
 						    <ul>
 						        {% for node in nav %}
 						            {{ _self.addNodeToNavigation(node, loop.index) }}
