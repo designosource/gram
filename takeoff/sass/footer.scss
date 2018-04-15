@@ -3,9 +3,17 @@ footer {
     background-color: $gram_red;
 	color: $white;
 
+    @media screen and (max-width: 1024px) {
+        height: 200px;
+    }
+
     .row:first-of-type {
         height: 170px;
         padding-top: 3rem;
+
+        @media screen and (max-width: 1024px) {
+            height: 120px;
+        }
 
         .col-3:first-child {
             img {

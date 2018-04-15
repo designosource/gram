@@ -14,6 +14,9 @@ html, body, p {
   font-weight: 400;
   font-size: 18px;
   color: #3D3D3D; }
+  @media screen and (max-width: 1024px) {
+    html, body, p {
+      font-size: 14px; } }
 
 h1 {
   font-weight: 700;
@@ -129,9 +132,15 @@ footer {
   height: 256px;
   background-color: #981C1F;
   color: #fff; }
+  @media screen and (max-width: 1024px) {
+    footer {
+      height: 200px; } }
   footer .row:first-of-type {
     height: 170px;
     padding-top: 3rem; }
+    @media screen and (max-width: 1024px) {
+      footer .row:first-of-type {
+        height: 120px; } }
     footer .row:first-of-type .col-3:first-child img {
       width: auto;
       height: 100%; }
