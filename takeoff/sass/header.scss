@@ -1,15 +1,4 @@
 .header {
-	h1 {
-		text-align: center;
-		margin: 0 auto;
-		padding-top: 10%;
-		color: $white;
-		font-size: 3em;
-		text-transform: uppercase;
-		font-weight: bold;
-		letter-spacing: 0.1em;
-	}
-
 	a {
 		color: $gram_grey;
 		display: block;
@@ -54,35 +43,4 @@
 	.hero-min {
 		height: 50vh;
 	}
-}
-.header a {
-
-}
-
-.header a img {
-
-}
-
-/* HERO */
-.header .hero {
-
-}
-
-.header .hero-max {
-	height: 95vh;
-}
-
-.header .hero-min {
-	height: 50vh;
-}
-
-.header h1 {
-	text-align: center;
-	margin: 0 auto;
-	padding-top: 10%;
-	color: white;
-	font-size: 3em;
-	text-transform: uppercase;
-	font-weight: bold;
-	letter-spacing: 0.1em;
 }
