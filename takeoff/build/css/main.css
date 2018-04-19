@@ -55,6 +55,18 @@ h4 {
   color: #fff;
   margin-bottom: 1.5rem; }
 
+.btn {
+  padding: 15px;
+  background-color: gainsboro; }
+  .btn--primary {
+    background-color: #981C1F;
+    color: #fff; }
+  .btn--center {
+    margin: 25px auto; }
+  .btn:hover {
+    background-color: #3D3D3D;
+    color: #fff; }
+
 .header a.home {
   width: 120px; }
   .header a.home img {
@@ -67,6 +79,9 @@ h4 {
   display: block;
   padding: 0;
   margin: 0; }
+  .header a:hover {
+    text-decoration: none;
+    color: #3D3D3D; }
 
 .header a.active {
   color: #981C1F; }
@@ -135,6 +150,8 @@ footer {
   @media screen and (max-width: 1024px) {
     footer {
       height: 200px; } }
+  footer h4 {
+    text-transform: uppercase; }
   footer .row:first-of-type {
     height: 170px;
     padding-top: 3rem; }
@@ -199,6 +216,72 @@ footer {
       font-size: 0.61rem;
       color: #fff;
       margin: auto; }
+
+.pagination {
+  text-align: center;
+  margin: 25px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .pagination li a {
+    color: #3D3D3D;
+    margin: 5px; }
+    .pagination li a:hover {
+      color: #981C1F; }
+
+.link {
+  color: #3D3D3D; }
+  .link:hover {
+    color: #981C1F; }
+
+.socialShare ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .socialShare ul li {
+    margin-right: 15px; }
+
+.socialShare p.share {
+  color: #981C1F;
+  margin-top: 3em; }
+
+.socialShare hr {
+  width: 40%;
+  color: #000;
+  border-top: 1px solid #000;
+  margin-left: 0; }
+
+/* MAIN */
+.main {
+  padding-top: 2em;
+  padding-bottom: 2em; }
+
+.press--title {
+  color: #000;
+  font-size: 2em;
+  padding: 0;
+  margin: 2em 0 15px 0;
+  text-decoration: none;
+  text-transform: none;
+  text-align: left;
+  line-height: inherit;
+  letter-spacing: inherit; }
 
 /* CONTENTBUILDER */
 img.cb-image {

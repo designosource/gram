@@ -1,7 +1,28 @@
 @import "_colors.scss";
 @import "_fonts.scss";
+@import "_buttons.scss";
 @import "header.scss";
 @import "footer.scss";
+@import "pagination.scss";
+@import "links.scss";
+
+/* MAIN */
+.main {
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+.press--title {
+	color: $black;
+	font-size: 2em;
+	padding: 0;
+	margin: 2em 0 15px 0;
+	text-decoration: none;
+	text-transform: none;
+	text-align: left;
+	line-height: inherit;
+	letter-spacing: inherit;
+}
 
 /* CONTENTBUILDER */
 img.cb-image {

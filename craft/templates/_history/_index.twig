@@ -6,7 +6,14 @@
 	<div class="section section--default">
 		<div class="container">
 			<div class="grid">
-				
+				{% for block in entry.historieBuilder.order('id DESC') %}
+					<div>
+						<h2>{{ block.date }}</h2>
+						<div>
+							{{ block.text }}
+						</div>
+					</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>

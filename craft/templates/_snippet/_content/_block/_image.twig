@@ -1,5 +1,6 @@
 <div class="block">
-    {% for img in block.image %}
-    	<img class="cb-image" src="{{ siteUrl }}{{ img.getUrl() }}">
-    {% endfor %}
+	<img class="cb-image" src="{{ siteUrl }}{{ block.image.first().getUrl() }}">
+    {# {% for img in block.image %}
+    	<img class="cb-image" src="{{ siteUrl }}{{ img.first().getUrl() }}">
+    {% endfor %} #}
 </div>

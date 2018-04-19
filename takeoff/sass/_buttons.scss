@@ -1,0 +1,15 @@
+.btn {
+	padding: 15px;
+	background-color: gainsboro;
+	&--primary {
+		background-color: $gram_red;
+		color: $white;
+	}
+	&--center {
+		margin: 25px auto;
+	}
+	&:hover {
+		background-color: $gram_dark_grey;
+		color: $white;
+	}
+}

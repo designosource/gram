@@ -32,12 +32,14 @@
 	</div>
 	<div class="section section--default">
 		{% if entry is defined %}
-			<div class="hero{% if entry.getSection().handle == 'home' %} hero-max{% else %} hero-min{% endif %}"
-			style="background-image: url('{{ siteUrl }}img/work-image-min-min.jpg')">
-				{% if entry.getSection().handle != 'home' and entry.title|length %}
-					<h1>{{ entry.title }}</h1>
-				{% endif %}
-			</div>
+			{% if entry.getSection().handle != 'press' %}
+				<div class="hero{% if entry.getSection().handle == 'home' %} hero-max{% else %} hero-min{% endif %}"
+				style="background-image: url('{{ siteUrl }}img/work-image-min-min.jpg')">
+					{% if entry.getSection().handle != 'home' and entry.title|length %}
+						<h1>{{ entry.title }}</h1>
+					{% endif %}
+				</div>
+			{% endif %}
 		{% endif %}
 	</div>
 </div>

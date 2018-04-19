@@ -2,18 +2,25 @@
 
 {% block content %}
 
-	<div class="section section--default">
-		<div class="container">
-			<div class="grid">
-				<div class="row">
-					{% for item in craft.entries.section('press') %}
-						<div class="col-4">
-							{% include '_snippet/_item/_news' %}
-						</div>
-					{% endfor %}
+<div class="section section--default">
+	<div class="container">
+		<div class="grid">
+			<div class="row">
+
+				{% paginate craft.entries.section('press').limit(3) as pageInfo, pageEntries %}
+
+				{% for item in pageEntries %}
+				<div class="col-4">
+					{% include '_snippet/_item/_news' %}
 				</div>
+				{% endfor %}
+
 			</div>
 		</div>
+
+		{% include '_snippet/_item/_pagination' %}
+
 	</div>
-	
+</div>
+
 {% endblock %}
