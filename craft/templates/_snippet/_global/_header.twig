@@ -4,21 +4,27 @@
 			<div class="grid">
 				<div class="row">
 					<div class="col-4">
-						<a href="{{ siteUrl }}">
+						<a href="{{ siteUrl }}" class="home">
 							<img src="{{ siteUrl }}{{ branding.image.first().getUrl('brandingLogo') }}">
 						</a>
 					</div>
 					<div class="col-8">
-						{% if craft.amNav.getNavRaw("mainNavigation") is defined %}
-							<nav>
-								<ul>
-									{% set nav = craft.amNav.getNavRaw("mainNavigation") %}
-									{% for node in nav %}
-										<li><a href="{{ node.url }}" class="{{ node.listClass }}" {% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a></li>
-									{% endfor %}
-								</ul>
-							</nav>
-						{% endif %}
+						{% set nav = craft.amNav.getNavRaw("mainNavigation") %}
+						{% macro addNodeToNavigation(node, index) %}
+							{%- set nodeClasses = [] -%}
+						    {%- if node.active or node.hasActiveChild -%}
+						        {%- set nodeClasses = nodeClasses|merge(['active']) -%}
+						    {%- endif -%}
+							<li><a href="{{ node.url }}" class="{{ node.listClass }} {{ nodeClasses|join(' ') }}" {% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a></li>
+						{% endmacro %}
+						<nav class="topnav">
+							<a href="javascript:void(0);" class="icon" onclick="openNav()">&#9776;</a>
+						    <ul>
+						        {% for node in nav %}
+						            {{ _self.addNodeToNavigation(node, loop.index) }}
+						        {% endfor %}
+						    </ul>
+						</nav>
 					</div>
 				</div>
 			</div>
@@ -26,12 +32,14 @@
 	</div>
 	<div class="section section--default">
 		{% if entry is defined %}
-			<div class="hero{% if entry.getSection().handle == 'home' %} hero-max{% else %} hero-min{% endif %}"
-			style="background-image: url('{{ siteUrl }}img/work-image-min-min.jpg')">
-				{% if entry.getSection().handle != 'home' and entry.title|length %}
-					<h1>{{ entry.title }}</h1>
-				{% endif %}
-			</div>
+			{% if entry.getSection().handle != 'press' %}
+				<div class="hero{% if entry.getSection().handle == 'home' %} hero-max{% else %} hero-min{% endif %}"
+				style="background-image: url('{{ siteUrl }}img/work-image-min-min.jpg')">
+					{% if entry.getSection().handle != 'home' and entry.title|length %}
+						<h1>{{ entry.title }}</h1>
+					{% endif %}
+				</div>
+			{% endif %}
 		{% endif %}
 	</div>
 </div>

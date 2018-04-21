@@ -1,7 +1,9 @@
 <a href="{{ item.url }}">
 	<div class="block">
 		{% if item.overviewImage|length %}
-			<img class="cb-image" src="{{ siteUrl }}{{ item.overviewImage.first().getUrl() }}">
+			<img class="cb-image" src="{{ siteUrl }}{{ item.overviewImage.first().getUrl('newsItem') }}">
+		{% else %}
+			<img class="cb-image" src="{{ siteUrl }}{{ fallback.image.first().getUrl('newsItem') }}">	
 		{% endif %}
 		<p><small>{{ item.postDate|date('l d F Y'|t) }}</small></p>
 		<h3>{{ item.overviewTitle ? item.overviewTitle : item.title }}</h3>

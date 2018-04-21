@@ -31,7 +31,9 @@
 						</div>
 					{% endfor %}
 					{% if press.count() > 3 %}
-						<a href="{{ craft.entries.section('pressOverview').first().getUrl() }}">{{ "Meer nieuws"|t }}</a>
+					<a class="btn btn--primary btn--center" href="{{ craft.entries.section('pressOverview').first().getUrl() }}">
+						{{ "Meer nieuws"|t }}
+					</a>
 					{% endif %}
 				</div>
 			</div>
@@ -47,12 +49,14 @@
 					{% for media in mediaImages.limit(3) %}
 						<div class="col-4">
 							<a data-fancybox="gallery" href="{{ media.image.first().getUrl() }}">
-								<img class="cb-image" src="{{ media.image.first().getUrl() }}">
+								<img class="cb-image" src="{{ media.image.first().getUrl('mediaItem') }}">
 							</a>
 						</div>
 					{% endfor %}
 					{% if mediaImages.count() > 3 %}
-						<a href="{{ craft.entries.section('mediaOverview').first().getUrl() }}">{{ "Meer foto's"|t }}</a>
+					<a class="btn btn--primary btn--center" href="{{ craft.entries.section('mediaOverview').first().getUrl() }}">
+						{{ "Meer foto's"|t }}
+					</a>
 					{% endif %}
 				</div>
 			</div>

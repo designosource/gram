@@ -1,0 +1,32 @@
+.link {
+	color: $gram_dark_grey;
+	
+	&:hover {
+		color: $gram_red;
+	}
+}
+
+.socialShare {
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+
+		li {
+			margin-right: 15px;
+		}
+	}
+
+	p.share {
+		color: $gram_red;
+		margin-top: 3em;
+	}
+
+	hr {
+		width: 40%;
+		color: $black;
+		border-top: 1px solid $black;
+		margin-left: 0;
+	}
+}

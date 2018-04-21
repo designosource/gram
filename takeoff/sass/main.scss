@@ -1,3 +1,4 @@
+
 /*
 	COLORS :
 	Rood : #981C1F
@@ -14,67 +15,51 @@ body {
 .header a {
 	display: block;
 	width: 120px;
-	padding: 0;
-	margin: 0;
+
+	@import "_colors.scss";
+	@import "_fonts.scss";
+	@import "_buttons.scss";
+	@import "header.scss";
+	@import "footer.scss";
+	@import "pagination.scss";
+	@import "links.scss";
+
+	/* MAIN */
+	.main {
+		padding-top: 2em;
+		padding-bottom: 2em;
+	}
+
+	.press--title {
+		color: $black;
+		font-size: 2em;
+
+		padding: 0;
+		margin: 2em 0 15px 0;
+		text-decoration: none;
+		text-transform: none;
+		text-align: left;
+		line-height: inherit;
+		letter-spacing: inherit;
+	}
+
+	/* CONTENTBUILDER */
+	img.cb-image {
+		display: block;
+		width: 100%;
+	}
+
+	.test-intro {
+		color: blue;
+	}
+
+	/* FOOTER */
+	footer {
+		background-color: #981C1F;
+		color: white;
+	}
+
+	.test-intro {
+		color: red;
+	}
 }
-
-.header a img {
-	display: block; 
-	width: 100%;
-	height: 100%;
-}
-
-/* HERO */
-.header .hero {
-	display: block;
-	width: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-}
-
-.header .hero-max {
-	height: 95vh;
-}
-
-.header .hero-min {
-	height: 50vh;
-}
-
-.header h1 {
-	text-align: center;
-	margin: 0 auto;
-	padding-top: 10%;
-	color: white;
-	font-size: 3em;
-	text-transform: uppercase;
-	font-weight: bold;
-	letter-spacing: 0.1em;
-}
-
-/* CONTENTBUILDER */
-img.cb-image {
-	display: block;
-	width: 100%;
-}
-
-.test-intro{
-	color: blue;
-}
-
-/* FOOTER */
-footer {
-	background-color: #981C1F;
-	color: white;
-}
-
-.test-intro {
-	background-color: blue;
-	font-size: 5em;
-}
-
-
-
-
-
-
