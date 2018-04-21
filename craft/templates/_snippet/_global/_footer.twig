@@ -45,6 +45,7 @@
 						<h4>Handige links</h4>
 						{% if handigeLinks.handigelinks|length %}
 							<ul>
+								<li><a href="{{ craft.entries.section('partnersOverview').first().getUrl() }}">{{ "Partners"|t }}</a></li>
 								{% for item in handigeLinks.handigelinks %}
 									<li>{{ item.links.htmlLink }}</li>
 								{% endfor %}
