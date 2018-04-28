@@ -12,6 +12,11 @@
 		&:hover {
 			color: $gram_red;
 		}
+
+		&.active {
+			color: $gram_red;
+			font-weight: bold;
+		}
 	}
 
 }

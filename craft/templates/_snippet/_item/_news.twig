@@ -1,12 +1,16 @@
-<a href="{{ item.url }}">
-	<div class="block">
-		{% if item.overviewImage|length %}
-			<img class="cb-image" src="{{ siteUrl }}{{ item.overviewImage.first().getUrl('newsItem') }}">
-		{% else %}
-			<img class="cb-image" src="{{ siteUrl }}{{ fallback.image.first().getUrl('newsItem') }}">	
-		{% endif %}
-		<p><small>{{ item.postDate|date('l d F Y'|t) }}</small></p>
-		<h3>{{ item.overviewTitle ? item.overviewTitle : item.title }}</h3>
-		<div>{{ item.overviewDescription }}</div>
+<a class="card--link" href="{{ item.url }}">
+	<div class="news--item" class="block">
+		<div class="card--img">
+			{% if item.overviewImage|length %}
+				<img class="cb-image" src="{{ siteUrl }}{{ item.overviewImage.first().getUrl('newsItem') }}">
+			{% else %}
+				<img class="cb-image" src="{{ siteUrl }}{{ fallback.image.first().getUrl('newsItem') }}">	
+			{% endif %}
+		</div>
+		<div class="card--text">
+			<p><small>{{ item.postDate|date('d F, Y'|t) }}</small></p>
+			<h3>{{ item.overviewTitle ? item.overviewTitle : item.title }}</h3>
+			<div>{{ item.overviewDescription }}</div>
+		</div>
 	</div>
 </a>

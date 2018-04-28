@@ -1,0 +1,29 @@
+.contact--form {
+	display: block;
+	width: 90%;
+	margin: 2em auto;
+}
+
+.form--input, .form--area {
+	display: block;
+	width: 100%;
+	margin: 5px auto 20px auto;
+	padding: 2px 0px 2px 0px;
+	border: 0px solid white;
+	border-bottom: 2px solid $gram_light_grey;
+	outline: none;
+	color: $gram_red;
+	font-weight: bold;
+	resize: none;
+	transition: 0.5s border-bottom;
+	box-sizing: border-box;
+
+	&::placeholder {
+		color: $gram_grey;
+		font-weight: normal;
+	}
+
+	&:focus {
+		border-bottom: 2px solid $gram_red;
+	}
+}
