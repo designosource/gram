@@ -307,7 +307,8 @@ footer {
 .card--link {
   overflow: hidden; }
   .card--link:hover, .card--link:focus {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #000; }
   .card--link:hover h3, .card--link:focus h3 {
     color: #981C1F; }
   .card--link:hover img, .card--link:focus img {
@@ -338,7 +339,8 @@ footer {
           box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 14px 0 rgba(0, 0, 0, 0.12); }
 
 .card--text {
-  padding: 20px; }
+  padding: 20px;
+  color: #000; }
 
 .card--text p small {
   color: #828282;

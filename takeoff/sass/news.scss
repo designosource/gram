@@ -3,6 +3,7 @@
 
 	&:hover, &:focus {
 		text-decoration: none;
+		color: $black;
 	}
 
 	&:hover h3, &:focus h3 {
@@ -33,6 +34,7 @@
 
 .card--text {
 	padding: 20px;
+	color: $black;
 }
 
 .card--text p small {
