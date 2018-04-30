@@ -26,7 +26,7 @@
 				<div class="row">
 					{% set press = craft.entries.section('press') %}
 					{% for item in press.limit(3) %}
-						<div class="col-4">
+						<div class="col-lg-4 news--div">
 							{% include '_snippet/_item/_news' %}
 						</div>
 					{% endfor %}
@@ -47,7 +47,7 @@
 				<div class="row">
 					{% set mediaImages = craft.entries.section('mediaImage') %}
 					{% for media in mediaImages.limit(3) %}
-						<div class="col-4">
+						<div class="col-sm-4">
 							<a data-fancybox="gallery" href="{{ media.image.first().getUrl() }}">
 								<img class="cb-image" src="{{ media.image.first().getUrl('mediaItem') }}">
 							</a>

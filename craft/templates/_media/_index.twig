@@ -10,7 +10,7 @@
 					{% paginate craft.entries.section('mediaImage').limit(4) as pageInfo, pageEntries %}
 
 					{% for media in pageEntries %}
-						<div class="col-3">
+						<div class="col-sm-3 news--div">
 							<a data-fancybox="gallery" href="{{ siteUrl }}{{ media.image.first().getUrl() }}">
 								<img class="cb-image" src="{{ siteUrl }}{{ media.image.first().getUrl('mediaItem') }}">
 							</a>

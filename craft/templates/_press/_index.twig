@@ -10,7 +10,7 @@
 				{% paginate craft.entries.section('press').limit(3) as pageInfo, pageEntries %}
 
 				{% for item in pageEntries %}
-				<div class="col-4">
+				<div class="col-lg-4 news--div">
 					{% include '_snippet/_item/_news' %}
 				</div>
 				{% endfor %}
