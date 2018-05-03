@@ -23,7 +23,9 @@
 
 	{% include '_snippet/_global/_header' %}
 
-	{% block content %} {% endblock %}
+	<div class="main">
+		{% block content %} {% endblock %}
+	</div>
 
 	{% include '_snippet/_global/_footer' %}
 
@@ -46,6 +48,13 @@
 		    var x = $('.header nav');
 			x.toggleClass('open');
 		}
+	</script>
+	<script type="text/javascript">
+	$( document ).ready(function() {
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+	});
 	</script>
 
 

@@ -26,12 +26,14 @@
 				<div class="row">
 					{% set press = craft.entries.section('press') %}
 					{% for item in press.limit(3) %}
-						<div class="col-4">
+						<div class="col-lg-4 news--div">
 							{% include '_snippet/_item/_news' %}
 						</div>
 					{% endfor %}
 					{% if press.count() > 3 %}
-						<a href="{{ craft.entries.section('pressOverview').first().getUrl() }}">{{ "Meer nieuws"|t }}</a>
+					<a class="btn btn--primary btn--center" href="{{ craft.entries.section('pressOverview').first().getUrl() }}">
+						{{ "Meer nieuws"|t }}
+					</a>
 					{% endif %}
 				</div>
 			</div>
@@ -45,14 +47,16 @@
 				<div class="row">
 					{% set mediaImages = craft.entries.section('mediaImage') %}
 					{% for media in mediaImages.limit(3) %}
-						<div class="col-4">
+						<div class="col-sm-4">
 							<a data-fancybox="gallery" href="{{ media.image.first().getUrl() }}">
-								<img class="cb-image" src="{{ media.image.first().getUrl() }}">
+								<img class="cb-image" src="{{ media.image.first().getUrl('mediaItem') }}">
 							</a>
 						</div>
 					{% endfor %}
 					{% if mediaImages.count() > 3 %}
-						<a href="{{ craft.entries.section('mediaOverview').first().getUrl() }}">{{ "Meer foto's"|t }}</a>
+					<a class="btn btn--primary btn--center" href="{{ craft.entries.section('mediaOverview').first().getUrl() }}">
+						{{ "Meer foto's"|t }}
+					</a>
 					{% endif %}
 				</div>
 			</div>

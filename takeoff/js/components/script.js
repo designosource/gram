@@ -1,1 +1,7 @@
-/* this is a test */
+/* Tooltip Partners */
+
+$( document ).ready(function() {
+    $(function () {
+	  $('[data-toggle="tooltip"]').tooltip();
+	});
+});

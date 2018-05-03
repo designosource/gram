@@ -18,10 +18,10 @@
 								<li><a target="_blank" href="{{ contactInfo.facebook }}"><i class="fab fa-facebook-f"></i></a></li>
 							{% endif %}
 							{% if contactInfo.instagram|length %}
-								<li><a target="_blank" href="{{ contactInfo.instagram }}"><i class="fab fa-instagram"></i></i></a></li>
+								<li><a target="_blank" href="{{ contactInfo.instagram }}"><i class="fab fa-instagram"></i></a></li>
 							{% endif %}
 							{% if contactInfo.twitter|length %}
-								<li><a target="_blank" href="{{ contactInfo.twitter }}"><i class="fab fa-twitter"></i></i></a></li>
+								<li><a target="_blank" href="{{ contactInfo.twitter }}"><i class="fab fa-twitter"></i></a></li>
 							{% endif %}
 							{% if contactInfo.linkedin|length %}
 								<li><a target="_blank" href="{{ contactInfo.linkedin }}"><i class="fab fa-linkedin-in"></i></a></li>
@@ -45,6 +45,7 @@
 						<h4>Handige links</h4>
 						{% if handigeLinks.handigelinks|length %}
 							<ul>
+								<li><a href="{{ craft.entries.section('partnersOverview').first().getUrl() }}">{{ "Partners"|t }}</a></li>
 								{% for item in handigeLinks.handigelinks %}
 									<li>{{ item.links.htmlLink }}</li>
 								{% endfor %}

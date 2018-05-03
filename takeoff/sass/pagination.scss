@@ -1,0 +1,22 @@
+.pagination {
+	text-align: center;
+	margin: 25px auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	li a {
+		color: $gram_dark_grey;
+		margin: 5px;
+
+		&:hover {
+			color: $gram_red;
+		}
+
+		&.active {
+			color: $gram_red;
+			font-weight: bold;
+		}
+	}
+
+}

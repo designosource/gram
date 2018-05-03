@@ -1,14 +1,52 @@
 @import "_colors.scss";
 @import "_fonts.scss";
+@import "_buttons.scss";
 @import "header.scss";
 @import "footer.scss";
+@import "pagination.scss";
+@import "links.scss";
+@import "contact.scss";
+@import "news.scss";
+
+/* MAIN */
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.main {
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+.press--header {
+	padding: 0;
+	margin: 5em 0 0 0;
+}
+
+.press--header > div {
+	padding: 0px !important;
+}
+
+.news--date {
+	color: $gram-grey;
+	font-size: 0.8em;
+	margin-top: 1.5em;
+}
+
+.press--title {
+	color: $black;
+	font-size: 2em;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	text-transform: none;
+	text-align: left;
+	line-height: inherit;
+	letter-spacing: inherit;
+}
 
 /* CONTENTBUILDER */
 img.cb-image {
 	display: block;
 	width: 100%;
-}
-
-.test-intro {
-	color: red;
 }
