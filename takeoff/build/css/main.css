@@ -144,7 +144,7 @@ h4 {
   height: 50vh; }
 
 footer {
-  padding: 50px 10px 15px 10px;
+  padding: 10px;
   background-color: #981C1F;
   color: #fff; }
   footer h4 {
@@ -389,3 +389,14 @@ body {
 img.cb-image {
   display: block;
   width: 100%; }
+
+.container .block:nth-of-type(2) {
+  background-color: #DBE5EF;
+  width: 100vw;
+  margin-left: calc(-1 * (100vw - 1110px) / 2);
+  padding: 50px 0; }
+  .container .block:nth-of-type(2) .row {
+    max-width: 1140px;
+    margin: auto; }
+    .container .block:nth-of-type(2) .row h2 {
+      color: #3D3D3D; }
