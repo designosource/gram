@@ -5,7 +5,8 @@
 {% if craft.request.param('year')|length %}
 	{% set yearParam = craft.request.param('year') %}
 {% else %}	
-	{% set yearParam = '09-2017' %}
+	{% set block = entry.historieBuilder|last %}
+	{% set yearParam = block.date|date('m-Y') %}
 {% endif %}
 
 
