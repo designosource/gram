@@ -2,19 +2,36 @@
 
 {% block content %}
 
+{% if craft.request.param('year')|length %}
+	{% set yearParam = craft.request.param('year') %}
+{% else %}	
+	{% set yearParam = '09-2017' %}
+{% endif %}
 
-	<div class="section section--default">
+
+	<div class="section">
 		<div class="container">
-			<div class="grid">
-				{% for block in entry.historieBuilder.order('id DESC') %}
-					<div>
-						<h2>{{ block.date }}</h2>
-						<div>
-							{{ block.text }}
-						</div>
-					</div>
+				{% for year in entry.historieBuilder %}
+					<ul>
+						<li>
+							<a href="{{ craft.entries.section('history').first().url }}?year={{ year.date|date("m-Y") }}">
+								{{ year.date|date("F Y") }}
+							</a>
+						</li>
+					</ul>
 				{% endfor %}
-			</div>
+
+				{% for item in entry.historieBuilder %}
+					{% if item.date|date("m-Y") == yearParam %}
+						<div>
+							<h2>{{ item.date|date("F Y") }}</h2>
+							<div>
+								{{ item.text }}
+							</div>
+						</div>
+					{% endif %}
+				{% endfor %}
+			
 		</div>
 	</div>
 	
