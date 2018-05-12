@@ -148,7 +148,8 @@ footer {
   background-color: #981C1F;
   color: #fff; }
   footer h4 {
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    letter-spacing: 0.07em; }
   footer .row:first-of-type {
     padding-top: 3rem; }
     @media screen and (max-width: 1024px) {
