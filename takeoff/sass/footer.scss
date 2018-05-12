@@ -9,7 +9,6 @@ footer {
     }
 
     .row:first-of-type {
-        //height: 170px;
         padding-top: 3rem;
 
         @media screen and (max-width: 1024px) {
@@ -35,7 +34,7 @@ footer {
                 margin-bottom: 0.5rem;
 
                 a {
-                    font-weight: $fw-medium;
+                    font-weight: $fw-regular;
                     font-size: 0.78rem;
                     color: $white;
                 }
