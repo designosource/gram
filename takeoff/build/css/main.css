@@ -396,20 +396,6 @@ img.cb-image {
 .header .section {
   padding: 0; }
 
-/*.container {
-	.block:nth-of-type(2) {
-		background-color: $gram_light_grey;
-	    width: 100vw;
-	    margin-left: calc(-1 * (100vw - 1110px) / 2);
-	    padding: 50px 0;
-
-		.row {
-			max-width: 1140px;
-    		margin: auto;
-
-			h2 {
-				color: $gram_dark_grey;
-			}
-		}
-	}
-}*/
+/* CARD BEDANKT */
+.card--center {
+  margin: 50px auto 10px auto; }
