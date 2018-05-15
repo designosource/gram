@@ -1,0 +1,26 @@
+{#
+/**
+ * Dashboard plugin for Craft CMS
+ *
+ * Dashboard_TextWidget Settings
+ *
+ * @author    Designosource
+ * @copyright Copyright (c) 2018 Designosource
+ * @link      http://www.designosource.be
+ * @package   Dashboard
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% includeCssResource "dashboard/css/Dashboard_Style.css" %}
+{% includeJsResource "dashboard/js/Dashboard_Script.js" %}
+
+{{ forms.textField({
+    label: 'Some Setting',
+    instructions: 'Enter some setting here.',
+    id: 'someSetting',
+    name: 'someSetting',
+    value: settings['someSetting']})
+}}
