@@ -11,7 +11,7 @@
 					<div class="col-6">{{ entry.text }}</div>
 					<div class="col-6">
 						{% if entry.image|length %}
-							<img class="cb-image" src="{{ entry.image.first().getUrl() }}">
+							<img class="cb-image" src="{{ siteUrl }}{{ entry.image.first().getUrl() }}">
 						{% endif %}
 					</div>
 				</div>
@@ -48,8 +48,8 @@
 					{% set mediaImages = craft.entries.section('mediaImage') %}
 					{% for media in mediaImages.limit(3) %}
 						<div class="col-sm-4">
-							<a data-fancybox="gallery" href="{{ media.image.first().getUrl() }}">
-								<img class="cb-image" src="{{ media.image.first().getUrl('mediaItem') }}">
+							<a data-fancybox="gallery" href="{{ siteUrl }}{{ media.image.first().getUrl() }}">
+								<img class="cb-image" src="{{ siteUrl }}{{ media.image.first().getUrl('mediaItem') }}">
 							</a>
 						</div>
 					{% endfor %}
