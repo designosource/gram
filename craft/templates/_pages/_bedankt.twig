@@ -8,18 +8,23 @@
 		<div class="container">
 			<div class="grid">
 				<div class="row">
-					<div class="col-6">
+					<div class="col-sm-6">
 						<h2>Contacteer ons</h2>
 						<div>{{ contact.text }}</div>
 					</div>
-					<div class="col-6">
-						{% if craft.request.getQuery('from')|length %}
-							{% set name = craft.request.getQuery('from') %}
-							<h2>Bedankt voor je bericht, {{ name }}</h2>
-						{% else %}	
-							<h2>Bedankt voor je bericht</h2>
-						{% endif %}
-						<p>We proberen zo snel mogelijk je vraag te beantwoorden.</p>
+					<div class="col-sm-6">
+						<div class="card card--center" style="width: 18rem;">
+						  <div class="card-body">
+						  	{% if craft.request.getQuery('from')|length %}
+							  	{% set name = craft.request.getQuery('from') %}
+							    <h5 class="card-title">Bedankt voor je bericht, {{ name }}</h5>
+							{% else %}	
+								<h5 class="card-title">Bedankt voor je bericht</h5>
+							{% endif %}
+						    <p class="card-text">We proberen zo snel mogelijk je vraag te beantwoorden.</p>
+						    <a href="{{ craft.entries.section('contact').first().url }}" class="btn btn--primary btn--center btn-sm">Stuur nog een bericht</a>
+						  </div>
+						</div>
 					</div>		
 				</div>
 			</div>

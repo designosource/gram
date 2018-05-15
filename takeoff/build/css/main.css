@@ -144,11 +144,12 @@ h4 {
   height: 50vh; }
 
 footer {
-  padding: 50px 10px 15px 10px;
+  padding: 10px;
   background-color: #981C1F;
   color: #fff; }
   footer h4 {
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    letter-spacing: 0.07em; }
   footer .row:first-of-type {
     padding-top: 3rem; }
     @media screen and (max-width: 1024px) {
@@ -169,7 +170,7 @@ footer {
       footer .row:first-of-type ul li {
         margin-bottom: 0.5rem; }
         footer .row:first-of-type ul li a {
-          font-weight: 500;
+          font-weight: 400;
           font-size: 0.78rem;
           color: #fff; }
     footer .row:first-of-type .col-3:nth-child(2) ul li:first-of-type {
@@ -358,10 +359,6 @@ footer {
 body {
   font-family: 'Roboto', sans-serif; }
 
-.main {
-  padding-top: 2em;
-  padding-bottom: 2em; }
-
 .press--header {
   padding: 0;
   margin: 5em 0 0 0; }
@@ -389,3 +386,17 @@ body {
 img.cb-image {
   display: block;
   width: 100%; }
+
+.section {
+  padding: 25px 0 25px 0; }
+  .section--blue {
+    background-color: #DBE5EF; }
+    .section--blue h2 {
+      color: #3D3D3D; }
+
+.header .section {
+  padding: 0; }
+
+/* CARD BEDANKT */
+.card--center {
+  margin: 50px auto 10px auto; }

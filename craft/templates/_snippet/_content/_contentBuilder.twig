@@ -1,18 +1,15 @@
 {% for row in entry.contentBuilder.level(1) %}
     {% switch row.type.handle %}
-        {% case 'block' %}
-            <div class="section">
+    {% case 'block' %}
+        {% if row.children is not empty %}
+            {% for block in row.children %}
+            <div class="section {% if block.color == 'blue' %}section--blue{% endif %}">
                 <div class="container">
-                    {% if row.children is not empty %}
-       		       		{% for block in row.children %}
-                            {% if block.status == 'enabled' %}
-                                    
-                                {% include '_snippet/_content/_block/_'~block.type.handle ignore missing %}
-                               
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
+                    {% include '_snippet/_content/_block/_'~block.type.handle ignore missing %}
                 </div>
             </div>  
+            {% endfor %}
+        {% endif %}
+
     {% endswitch %}
 {% endfor %}

@@ -13,11 +13,6 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-.main {
-	padding-top: 2em;
-	padding-bottom: 2em;
-}
-
 .press--header {
 	padding: 0;
 	margin: 5em 0 0 0;
@@ -54,3 +49,30 @@ img.cb-image {
 	display: block;
 	width: 100%;
 }
+
+.section {
+	padding: 25px 0 25px 0;
+	
+	&--blue {
+		background-color: $gram_light_grey;
+
+		h2 {
+			color: $gram_dark_grey;
+		}
+	}
+}
+
+.header .section {
+	padding: 0;
+}
+
+
+/* CARD BEDANKT */
+.card--center {
+	margin: 50px auto 10px auto;
+}
+
+
+
+
+
