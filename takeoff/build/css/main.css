@@ -398,6 +398,9 @@ img.cb-image {
       color: #3D3D3D; }
     .section--blue h2::before {
       display: none; }
+  @media screen and (max-width: 1024px) {
+    .section .container {
+      max-width: 90%; } }
 
 .header .section {
   padding: 0; }

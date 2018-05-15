@@ -60,6 +60,12 @@ img.cb-image {
 			display: none;
 		}
 	}
+
+	@media screen and (max-width: 1024px) {
+		.container {
+			max-width: 90%;
+		}
+	}
 }
 
 .header .section {
