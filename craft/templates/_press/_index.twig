@@ -22,7 +22,7 @@
 				<ul class="timeline">
 					{% for year in years %}
 						<li>
-							<a href="{{craft.request.getUrl() }}?year={{ year }}">
+							<a href="{{craft.request.getUrl() }}?year={{ year }}" class="{% if year == yearParam %} active {% endif %}">
 								{{ year }}
 							</a>
 						</li>
