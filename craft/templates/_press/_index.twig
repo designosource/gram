@@ -2,11 +2,34 @@
 
 {% block content %}
 
+{% if craft.request.param('year')|length %}
+	{% set yearParam = craft.request.param('year') %}
+{% else %}
+	{% set yearParam = "now"|date("Y") %}
+{% endif %}
+
+{% set years = [] %}
+{% for year in craft.entries.section('press') %}
+   	{% if year.date|date("Y") not in years %}
+    	{% set years = years|merge([year.date|date("Y")]) %}
+   	{% endif %}
+{% endfor %}
+
 <div class="section section--default">
 	<div class="container">
 		<div class="grid">
 			<div class="row">
-
+				<ul class="timeline">
+					{% for year in years %}
+						<li>
+							<a href="{{craft.request.getUrl() }}?year={{ year }}">
+								{{ year }}
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="row">
 				{% paginate craft.entries.section('press').limit(6) as pageInfo, pageEntries %}
 
 				{% for item in pageEntries %}
