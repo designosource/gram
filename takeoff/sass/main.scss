@@ -76,6 +76,37 @@ img.cb-image {
 	padding: 0;
 }
 
+/* Timeline */
+ul.timeline {
+	display: flex;
+
+	li {
+		padding: 0 1rem;
+
+		a {
+			color: $gram_dark_grey;
+		}
+
+		a:hover {
+			color: $gram_red;
+			text-decoration: none;
+		}
+
+		a.active {
+			color: $gram_red;
+			font-weight: $fw-medium;
+		}
+	}
+
+	li:first-of-type {
+		padding-left: 0;
+	}
+
+	li:last-of-type {
+		padding-right: 0;
+	}
+}
+
 
 /* CARD BEDANKT */
 .card--center {

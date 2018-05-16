@@ -9,7 +9,7 @@
 						</a>
 					</div>
 					<div class="col-3">
-						<h4>Contacteer ons</h4>
+						<h5>Contacteer ons</h5>
 						<ul>
 							{% if contactInfo.email|length %}
 								<li><a href="mailto:{{ contactInfo.email }}">{{ contactInfo.email }}</a></li>
@@ -29,7 +29,7 @@
 						</ul>
 					</div>
 					<div class="col-3">
-						<h4>Navigatie</h4>
+						<h5>Navigatie</h5>
 						{% if craft.amNav.getNavRaw("mainNavigation") is defined %}
 							<nav>
 								<ul>
@@ -42,7 +42,7 @@
 						{% endif %}
 					</div>
 					<div class="col-3">
-						<h4>Handige links</h4>
+						<h5>Handige links</h5>
 						{% if handigeLinks.handigelinks|length %}
 							<ul>
 								<li><a href="{{ craft.entries.section('partnersOverview').first().getUrl() }}">{{ "Partners"|t }}</a></li>
