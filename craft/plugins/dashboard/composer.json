@@ -1,0 +1,14 @@
+{
+	"name": "https://github.com/designosource//dashboard",
+	"description": "This plugin allows you to leave a message on the dashboard.",
+	"type": "craft-plugin",
+	"authors": [
+		{
+			"name": "Designosource",
+			"homepage": "http://www.designosource.be"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	}
+}

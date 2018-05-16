@@ -52,12 +52,22 @@ img.cb-image {
 
 .section {
 	padding: 25px 0 25px 0;
-	
+
 	&--blue {
 		background-color: $gram_light_grey;
 
 		h2 {
 			color: $gram_dark_grey;
+		}
+
+		h2::before {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 1024px) {
+		.container {
+			max-width: 90%;
 		}
 	}
 }
@@ -71,8 +81,3 @@ img.cb-image {
 .card--center {
 	margin: 50px auto 10px auto;
 }
-
-
-
-
-
