@@ -434,3 +434,9 @@ ul.timeline {
 /* CARD BEDANKT */
 .card--center {
   margin: 50px auto 10px auto; }
+
+/* VIDEO */
+.full-video {
+  background-color: #000;
+  width: 100% !important;
+  height: 100% !important; }
