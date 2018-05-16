@@ -4,40 +4,46 @@
 
 {% set years = [] %}
 {% for year in craft.entries.section('mediaImage') %}
-   	{% if year.date|date("Y") not in years %}
-    	{% set years = years|merge([year.date|date("Y")]) %}
-   	{% endif %}
+{% if year.date|date("Y") not in years %}
+{% set years = years|merge([year.date|date("Y")]) %}
+{% endif %}
 {% endfor %}
 
-	<div class="section section--default">
-		<div class="container">
-			<div class="grid">
-                <div class="row">
-                    <ul class="timeline">
-                        {% for year in years %}
-                            <li>
-                                <a href="{{craft.request.getUrl() }}?year={{ year }}">
-                                    {{ year }}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-				<div class="row">
-          {% paginate craft.entries.section('mediaImage').limit(12) as pageInfo, pageEntries %}
-					{% for media in pageEntries %}
-						<div class="col-sm-3 news--div">
-							<a data-fancybox="gallery" href="{{ siteUrl }}{{ media.image.first().getUrl() }}">
-								<img class="cb-image" src="{{ siteUrl }}{{ media.image.first().getUrl('mediaItem') }}">
+<div class="section section--default">
+	<div class="container">
+		<div class="grid">
+			<div class="row">
+				<ul class="timeline">
+					{% for year in years %}
+					<li>
+						<a href="{{craft.request.getUrl() }}?year={{ year }}">
+							{{ year }}
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="row">
+				{% paginate craft.entries.section('mediaImage').limit(12) as pageInfo, pageEntries %}
+				{% for media in pageEntries %}
+				<div class="col-sm-3 news--div">
+					{% for block in media.media %}
+						{% if block.type == 'image' %}
+							<a data-fancybox="gallery" href="{{ siteUrl }}{{ block.image.first().getUrl() }}">
+								<img class="cb-image" src="{{ siteUrl }}{{ block.image.first().getUrl('mediaItem') }}">
 							</a>
-						</div>
+						{% elseif block.type == 'video' %}
+							{{ craft.embedder.embed (block.video, {max_width:250, max_height:200, class: 'full-video'}) }}
+						{% endif %}
 					{% endfor %}
 				</div>
+				{% endfor %}
 			</div>
-
-			{% include '_snippet/_item/_pagination' %}
-
 		</div>
+
+		{% include '_snippet/_item/_pagination' %}
+
 	</div>
+</div>
 
 {% endblock %}

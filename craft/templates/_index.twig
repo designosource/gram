@@ -48,9 +48,15 @@
 					{% set mediaImages = craft.entries.section('mediaImage') %}
 					{% for media in mediaImages.limit(3) %}
 						<div class="col-sm-4">
-							<a data-fancybox="gallery" href="{{ siteUrl }}{{ media.image.first().getUrl() }}">
-								<img class="cb-image" src="{{ siteUrl }}{{ media.image.first().getUrl('mediaItem') }}">
-							</a>
+							{% for block in media.media %}
+								{% if block.type == 'image' %}
+									<a data-fancybox="gallery" href="{{ siteUrl }}{{ block.image.first().getUrl() }}">
+										<img class="cb-image" src="{{ siteUrl }}{{ block.image.first().getUrl('mediaItem') }}">
+									</a>
+								{% elseif block.type == 'video' %}
+									{{ craft.embedder.embed (block.video, {max_width:250, max_height:200, class: 'full-video'}) }}
+								{% endif %}
+							{% endfor %}
 						</div>
 					{% endfor %}
 					{% if mediaImages.count() > 3 %}
