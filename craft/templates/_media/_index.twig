@@ -25,7 +25,8 @@
                 </div>
 				<div class="row">
           {% paginate craft.entries.section('mediaImage').limit(12) as pageInfo, pageEntries %}
-					{% for media in pageEntries %}
+				{% for media in pageEntries %}
+					{% for block in media.media %}
 						<div class="col-sm-3 news--div">
 						{% if block.type == 'image' %}
 							<a data-fancybox="gallery" href="{{ siteUrl }}{{ media.image.first().getUrl() }}">
