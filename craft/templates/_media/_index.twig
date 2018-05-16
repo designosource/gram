@@ -2,13 +2,29 @@
 
 {% block content %}
 
+{% set years = [] %}
+{% for year in craft.entries.section('mediaImage') %}
+   	{% if year.date|date("Y") not in years %}
+    	{% set years = years|merge([year.date|date("Y")]) %}
+   	{% endif %}
+{% endfor %}
+
 	<div class="section section--default">
 		<div class="container">
 			<div class="grid">
+                <div class="row">
+                    <ul class="timeline">
+                        {% for year in years %}
+                            <li>
+                                <a href="{{craft.request.getUrl() }}?year={{ year }}">
+                                    {{ year }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
 				<div class="row">
-
-					{% paginate craft.entries.section('mediaImage').limit(12) as pageInfo, pageEntries %}
-
+          {% paginate craft.entries.section('mediaImage').limit(12) as pageInfo, pageEntries %}
 					{% for media in pageEntries %}
 						<div class="col-sm-3 news--div">
 							<a data-fancybox="gallery" href="{{ siteUrl }}{{ media.image.first().getUrl() }}">
@@ -23,5 +39,5 @@
 
 		</div>
 	</div>
-	
+
 {% endblock %}

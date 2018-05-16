@@ -4,36 +4,42 @@
 
 {% if craft.request.param('year')|length %}
 	{% set yearParam = craft.request.param('year') %}
-{% else %}	
+{% else %}
 	{% set block = entry.historieBuilder|last %}
-	{% set yearParam = block.date|date('m-Y') %}
+	{% set yearParam = block.date|date('Y') %}
 {% endif %}
 
+{% set years = [] %}
+{% for year in entry.historieBuilder %}
+   	{% if year.date|date("Y") not in years %}
+    	{% set years = years|merge([year.date|date("Y")]) %}
+   	{% endif %}
+{% endfor %}
 
 	<div class="section">
 		<div class="container">
-				{% for year in entry.historieBuilder %}
-					<ul>
-						<li>
-							<a href="{{ craft.entries.section('history').first().url }}?year={{ year.date|date("m-Y") }}">
-								{{ year.date|date("F Y") }}
-							</a>
-						</li>
-					</ul>
+			<ul class="timeline">
+				{% for year in years %}
+					<li>
+						<a href="{{ craft.entries.section('history').first().url }}?year={{ year }}" class="{% if year == yearParam %} active {% endif %}">
+							{{ year }}
+						</a>
+					</li>
 				{% endfor %}
-
-				{% for item in entry.historieBuilder %}
-					{% if item.date|date("m-Y") == yearParam %}
+			</ul>
+			<h2>{{ yearParam }}</h2>
+			{% for item in entry.historieBuilder %}
+				{% if item.date|date("Y") == yearParam %}
+					<div>
+						<h3>{{ item.date|date("F")|capitalize }}</h3>
+						<h4>{{ item.blockTitle|capitalize }}</h4>
 						<div>
-							<h2>{{ item.date|date("F Y") }}</h2>
-							<div>
-								{{ item.text }}
-							</div>
+							{{ item.text }}
 						</div>
-					{% endif %}
-				{% endfor %}
-			
+					</div>
+				{% endif %}
+			{% endfor %}
 		</div>
 	</div>
-	
+
 {% endblock %}
