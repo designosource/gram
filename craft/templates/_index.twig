@@ -51,7 +51,10 @@
 							{% for block in media.media %}
 								{% if block.type == 'image' %}
 									<a data-fancybox="gallery" href="{{ siteUrl }}{{ block.image.first().getUrl() }}">
-										<img class="cb-image" src="{{ siteUrl }}{{ block.image.first().getUrl('mediaItem') }}">
+										<div class="image-wrapper">
+											<img class="image cb-image" src="{{ siteUrl }}{{ block.image.first().getUrl('mediaItem') }}" alt="{{ media.title }}">
+											<div class="overlay"></div>
+										</div>
 									</a>
 								{% elseif block.type == 'video' %}
 									{{ craft.embedder.embed (block.video, {max_width:250, max_height:200, class: 'full-video'}) }}

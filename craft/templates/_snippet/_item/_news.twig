@@ -1,11 +1,12 @@
 <a class="card--link" href="{{ item.url }}">
 	<div class="news--item" class="block">
-		<div class="card--img">
+		<div class="card--img image-wrapper">
 			{% if item.overviewImage|length %}
-				<img class="cb-image" src="{{ siteUrl }}{{ item.overviewImage.first().getUrl('newsItem') }}">
+				<img class="image cb-image" src="{{ siteUrl }}{{ item.overviewImage.first().getUrl('newsItem') }}">
 			{% else %}
-				<img class="cb-image" src="{{ siteUrl }}{{ fallback.image.first().getUrl('newsItem') }}">	
+				<img class="image cb-image" src="{{ siteUrl }}{{ fallback.image.first().getUrl('newsItem') }}">	
 			{% endif %}
+			<div class="overlay"></div>
 		</div>
 		<div class="card--text">
 			<p><small>{{ item.postDate|date('d F, Y'|t) }}</small></p>

@@ -1,6 +1,7 @@
 .btn {
-	padding: 15px;
+	padding: 7px 12px;
 	background-color: gainsboro;
+	border-radius: 3px;
 	&--primary {
 		background-color: $gram_red;
 		color: $white;

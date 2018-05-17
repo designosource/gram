@@ -15,16 +15,16 @@
 								<li><a href="mailto:{{ contactInfo.email }}">{{ contactInfo.email }}</a></li>
 							{% endif %}
 							{% if contactInfo.facebook|length %}
-								<li><a target="_blank" href="{{ contactInfo.facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a class="social-icon" target="_blank" href="{{ contactInfo.facebook }}"><i class="fab fa-facebook-f"></i></a></li>
 							{% endif %}
 							{% if contactInfo.instagram|length %}
-								<li><a target="_blank" href="{{ contactInfo.instagram }}"><i class="fab fa-instagram"></i></a></li>
+								<li><a class="social-icon" target="_blank" href="{{ contactInfo.instagram }}"><i class="fab fa-instagram"></i></a></li>
 							{% endif %}
 							{% if contactInfo.twitter|length %}
-								<li><a target="_blank" href="{{ contactInfo.twitter }}"><i class="fab fa-twitter"></i></a></li>
+								<li><a class="social-icon" target="_blank" href="{{ contactInfo.twitter }}"><i class="fab fa-twitter"></i></a></li>
 							{% endif %}
 							{% if contactInfo.linkedin|length %}
-								<li><a target="_blank" href="{{ contactInfo.linkedin }}"><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a class="social-icon" target="_blank" href="{{ contactInfo.linkedin }}"><i class="fab fa-linkedin-in"></i></a></li>
 							{% endif %}
 						</ul>
 					</div>
@@ -43,14 +43,15 @@
 					</div>
 					<div class="col-3">
 						<h5>Handige links</h5>
-						{% if handigeLinks.handigelinks|length %}
 							<ul>
 								<li><a href="{{ craft.entries.section('partnersOverview').first().getUrl() }}">{{ "Partners"|t }}</a></li>
-								{% for item in handigeLinks.handigelinks %}
-									<li>{{ item.links.htmlLink }}</li>
-								{% endfor %}
+								<li><a href="{{ craft.entries.section('privacy').first().getUrl() }}">{{ "Privacy"|t }}</a></li>
+								{% if handigeLinks.handigelinks|length %}
+									{% for item in handigeLinks.handigelinks %}
+										<li>{{ item.links.htmlLink }}</li>
+									{% endfor %}
+								{% endif %}
 							</ul>
-						{% endif %}
 					</div>
 				</div>
 				<div class="row">

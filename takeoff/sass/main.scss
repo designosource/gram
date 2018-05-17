@@ -1,6 +1,7 @@
 @import "_colors.scss";
 @import "_fonts.scss";
 @import "_buttons.scss";
+@import "_images.scss";
 @import "header.scss";
 @import "footer.scss";
 @import "pagination.scss";
@@ -41,15 +42,11 @@ body {
 }
 
 .container{
-
+	box-sizing: border-box;
+	padding: 10px;
 }
 
 /* CONTENTBUILDER */
-img.cb-image {
-	display: block;
-	width: 100%;
-}
-
 .section {
 	padding: 25px 0 25px 0;
 
@@ -111,13 +108,6 @@ ul.timeline {
 /* CARD BEDANKT */
 .card--center {
 	margin: 50px auto 10px auto;
-}
-
-/* VIDEO */
-.full-video {
-	background-color: $black;
-	width: 100% !important;
-	height: 100% !important;
 }
 
 
