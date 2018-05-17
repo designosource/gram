@@ -18,15 +18,19 @@
 
 	<div class="section">
 		<div class="container">
-			<ul class="timeline">
-				{% for year in years %}
-					<li>
-						<a href="{{ craft.entries.section('history').first().url }}?year={{ year }}" class="{% if year == yearParam %} active {% endif %}">
-							{{ year }}
-						</a>
-					</li>
-				{% endfor %}
-			</ul>
+			<div class="grid">
+				<div class="row row-offset">
+					<ul class="timeline">
+						{% for year in years %}
+							<li>
+								<a href="{{ craft.entries.section('history').first().url }}?year={{ year }}" class="{% if year == yearParam %} active {% endif %}">
+									{{ year }}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
 			<h2>{{ yearParam }}</h2>
 			{% for item in entry.historieBuilder %}
 				{% if item.date|date("Y") == yearParam %}

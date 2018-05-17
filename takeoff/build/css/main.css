@@ -431,6 +431,18 @@ footer {
 body {
   font-family: 'Roboto', sans-serif; }
 
+.row-offset {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 2em;
+  margin-top: 1em; }
+  .row-offset ul li a:not(.active) {
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px; }
+  .row-offset ul li a:not(.active):hover {
+    border-bottom: 0px solid #981C1F;
+    padding-bottom: 2px; }
+
 .press--header {
   padding: 0;
   margin: 5em 0 0 0; }
