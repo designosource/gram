@@ -37,6 +37,10 @@
 				style="background-image: url('{{ siteUrl }}img/work-image-min-min.jpg')">
 					{% if entry.getSection().handle != 'home' and entry.title|length %}
 						<h1>{{ entry.title }}</h1>
+					{% elseif entry.getSection().handle == 'home' %}
+						<h1>{{ "Gram vzw"|t }}</h1>	
+						<h3>Gilde voor Revaluatie Arbeid en Motivatie</h3>
+						<div class="scroll"><a href="#scroll"><i class="fas fa-arrow-down"></i></a></div>
 					{% endif %}
 				</div>
 			{% endif %}
