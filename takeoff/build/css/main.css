@@ -547,3 +547,6 @@ ul.timeline {
 /* CARD BEDANKT */
 .card--center {
   margin: 50px auto 10px auto; }
+
+.col-sm-4 {
+  margin-bottom: 15px; }
