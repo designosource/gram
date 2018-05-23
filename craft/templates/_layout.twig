@@ -20,30 +20,30 @@
 			<meta name="description" content="{{ entry.overviewDescription }}">
 			<meta property="og:title" content="{{ entry.title }}">
 			<meta property="og:description" content="{{ entry.overviewDescription|length ? entry.overviewDescription : 'GRAM staat voor Gilde voor Revaluatie Arbeid en Motivatie. Dit is een actiegroep van ondernemers die maandelijks bijeenkomen om van gedachten te wisselen en acties uit te werken met betrekking tot de ingenomen standpunten.' }}">
-			<meta property="og:image" content="{{ siteUrl }}{{ entry.overviewImage|length ? entry.overviewImage.first() : fallback.image.first() }}">
+			<meta property="og:image" content="{{ siteUrl }}{{ entry.overviewImage|length ? entry.overviewImage.first().getUrl() : fallback.image.first().getUrl() }}">
 			<meta property="og:url" content="{{ entry.url }}">
 			<meta name="twitter:title" content="{{ entry.title }}">
 			<meta name="twitter:description" content="{{ entry.overviewDescription|length ? entry.overviewDescription : 'GRAM staat voor Gilde voor Revaluatie Arbeid en Motivatie. Dit is een actiegroep van ondernemers die maandelijks bijeenkomen om van gedachten te wisselen en acties uit te werken met betrekking tot de ingenomen standpunten.' }}">
-			<meta name="twitter:image" content="{{ siteUrl }}{{ entry.overviewImage|length ? entry.overviewImage.first() : fallback.image.first() }}">
+			<meta name="twitter:image" content="{{ siteUrl }}{{ entry.overviewImage|length ? entry.overviewImage.first().getUrl() : fallback.image.first().getUrl() }}">
 		{% else %}
 			<meta name="description" content="GRAM staat voor 'Gilde voor Revaluatie Arbeid en Motivatie'. Dit is een actiegroep van ondernemers die maandelijks bijeenkomen om van gedachten te wisselen en acties uit te werken met betrekking tot de ingenomen standpunten.">
 			<meta property="og:title" content="GRAM VZW">
 			<meta property="og:description" content="GRAM staat voor 'Gilde voor Revaluatie Arbeid en Motivatie'. Dit is een actiegroep van ondernemers die maandelijks bijeenkomen om van gedachten te wisselen en acties uit te werken met betrekking tot de ingenomen standpunten.">
-			<meta property="og:image" content="{{ siteUrl }}{{ fallback.image.first() }}">
+			<meta property="og:image" content="{{ siteUrl }}{{ fallback.image.first().getUrl() }}">
 			<meta property="og:url" content="http://www.gramvzw.be/">
 			<meta name="twitter:title" content="GRAM VZW">
 			<meta name="twitter:description" content="GRAM staat voor Gilde voor Revaluatie Arbeid en Motivatie. Dit is een actiegroep van ondernemers die maandelijks bijeenkomen om van gedachten te wisselen en acties uit te werken met betrekking tot de ingenomen standpunten.">
-			<meta name="twitter:image" content="http://www.gramvzw.be/">
+			<meta name="twitter:image" content="{{ siteUrl }}{{ fallback.image.first().getUrl() }}">
 		{% endif %}
 	{% else %}
 		<meta name="description" content="GRAM staat voor 'Gilde voor Revaluatie Arbeid en Motivatie'. Dit is een actiegroep van ondernemers die maandelijks bijeenkomen om van gedachten te wisselen en acties uit te werken met betrekking tot de ingenomen standpunten.">
 		<meta property="og:title" content="GRAM VZW">
 		<meta property="og:description" content="GRAM staat voor 'Gilde voor Revaluatie Arbeid en Motivatie'. Dit is een actiegroep van ondernemers die maandelijks bijeenkomen om van gedachten te wisselen en acties uit te werken met betrekking tot de ingenomen standpunten.">
-		<meta property="og:image" content="{{ siteUrl }}{{ fallback.image.first() }}">
-		<meta property="og:url" content="http://www.gramvzw.be/">
+		<meta property="og:image" content="{{ siteUrl }}{{ fallback.image.first().getUrl() }}">
+		<meta property="og:url" content="{{ siteUrl }}">
 		<meta name="twitter:title" content="GRAM VZW">
 		<meta name="twitter:description" content="GRAM staat voor Gilde voor Revaluatie Arbeid en Motivatie. Dit is een actiegroep van ondernemers die maandelijks bijeenkomen om van gedachten te wisselen en acties uit te werken met betrekking tot de ingenomen standpunten.">
-		<meta name="twitter:image" content="http://www.gramvzw.be/">
+		<meta name="twitter:image" content="{{ siteUrl }}{{ fallback.image.first().getUrl() }}">
 	{% endif %}
 
 
