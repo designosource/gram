@@ -84,6 +84,11 @@
 		function openNav() {
 		    var x = $('.header nav');
 			x.toggleClass('open');
+            if (x.hasClass('open')) {
+                $('.icon').html('&#9747');
+            } else {
+                $('.icon').html('&#9776');
+            }
 		}
 	</script>
 	<script type="text/javascript">
