@@ -9,8 +9,8 @@
 			<div class="grid">
 				<h2>{{ "Wat is gram"|t }}</h2>
 				<div class="row">
-					<div class="col-6">{{ entry.text }}</div>
-					<div class="col-6">
+					<div class="col-lg-6">{{ entry.text }}</div>
+					<div class="col-lg-6">
 						{% if entry.image|length %}
 							<img class="cb-image" src="{{ siteUrl }}{{ entry.image.first().getUrl() }}">
 						{% endif %}
