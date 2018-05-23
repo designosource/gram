@@ -2,17 +2,23 @@
 
 {% block content %}
 
+{% if craft.request.param('year')|length %}
+	{% set yearParam = craft.request.param('year') %}
+{% else %}
+	{% set yearParam = "now"|date("Y") %}
+{% endif %}
+
 {% set years = [] %}
 {% for year in craft.entries.section('mediaImage') %}
-   	{% if year.date|date("Y") not in years %}
-    	{% set years = years|merge([year.date|date("Y")]) %}
-   	{% endif %}
+	{% if year.date|date("Y") not in years %}
+		{% set years = years|merge([year.date|date("Y")]) %}
+	{% endif %}
 {% endfor %}
 
 	<div class="section section--default">
 		<div class="container">
 			<div class="grid">
-                <div class="row">
+                <div class="row row-offset">
                     <ul class="timeline">
                         {% for year in years %}
                             <li>
@@ -25,19 +31,28 @@
                 </div>
 				<div class="row">
           {% paginate craft.entries.section('mediaImage').limit(12) as pageInfo, pageEntries %}
-					{% for media in pageEntries %}
+				{% for media in pageEntries %}
+					{% for block in media.media %}
 						<div class="col-sm-3 news--div">
-							<a data-fancybox="gallery" href="{{ siteUrl }}{{ media.image.first().getUrl() }}">
-								<img class="cb-image" src="{{ siteUrl }}{{ media.image.first().getUrl('mediaItem') }}">
+						{% if block.type == 'image' %}
+							<a data-fancybox="gallery" href="{{ siteUrl }}{{ block.image.first().getUrl() }}">
+								<div class="image-wrapper">
+									<img class="image cb-image" src="{{ siteUrl }}{{ block.image.first().getUrl('mediaItem') }}" alt="{{ media.title }}">
+									<div class="overlay"></div>
+								</div>
 							</a>
-						</div>
+						{% elseif block.type == 'video' %}
+							{{ craft.embedder.embed (block.video, {max_width:250, max_height:200, class: 'full-video'}) }}
+						{% endif %}
 					{% endfor %}
 				</div>
+				{% endfor %}
 			</div>
-
-			{% include '_snippet/_item/_pagination' %}
-
 		</div>
+
+		{% include '_snippet/_item/_pagination' %}
+
 	</div>
+</div>
 
 {% endblock %}

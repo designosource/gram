@@ -14,15 +14,23 @@
 		display: block;
 		padding: 0;
 		margin: 0;
+		box-sizing: border-box;
+		border-bottom: 1px solid $white;
 
-		&:hover {
+		&:hover:not(.icon) {
 			text-decoration: none;
 			color: $gram_dark_grey;
+			border-bottom: 1px solid $gram_dark_grey;
 		}
 	}
 
 	a.active {
 		color: $gram_red;
+
+		&:hover {
+			text-decoration: none;
+			border-bottom: 1px solid $white;
+		}
 	}
 
 	nav {
@@ -37,6 +45,8 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			//text-transform: uppercase;
+			letter-spacing: 0.01em;
 
 			@media screen and (max-width: 1024px) {
 				display: none;
@@ -88,10 +98,39 @@
 	}
 
 	.hero-max {
-		height: 95vh;
+		height: 90vh;
+
+		h1 {
+			line-height: 10vh;
+			padding-top: 35vh;
+		}
+
+		h3 {
+			color: white;
+			text-align: center;
+			//text-transform: uppercase;
+			letter-spacing: 0.1em;
+		}
+
 	}
 
 	.hero-min {
 		height: 50vh;
 	}
+
+	.scroll	a {
+		color: $white;
+		font-size: 2em;
+		border-bottom: 0px solid white;
+		text-align: center;
+		margin-top: 23vh;
+
+		&:hover {
+			color: $gram_light_grey;
+			text-decoration: none;
+			border-bottom: 0px solid white;
+			cursor: pointer
+		}
+	}
+
 }

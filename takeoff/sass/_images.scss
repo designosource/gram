@@ -1,0 +1,60 @@
+/* VIDEO */
+.full-video {
+	background-color: $black;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+img.cb-image {
+	display: block;
+	width: 100%;
+}
+
+/* HOVER EFFECT */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  transition: .5s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: $gram_red;
+}
+
+.image-wrapper:hover .overlay {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.image-wrapper:hover .image {
+	transform: scale(1.1);
+}
+
+.vertical {
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+

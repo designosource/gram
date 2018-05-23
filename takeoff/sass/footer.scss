@@ -1,5 +1,4 @@
 footer {
-    //height: 256px;
     padding: 10px;
     background-color: $gram_red;
 	color: $white;
@@ -56,6 +55,16 @@ footer {
 
                         a {
                             font-size: 0.88rem;
+                        }
+                    }
+
+                    li a.social-icon {
+                        font-size: 1.2em;
+                        transition: 0.3s ease;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $gram_grey;
                         }
                     }
                 }

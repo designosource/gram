@@ -1,6 +1,7 @@
 @import "_colors.scss";
 @import "_fonts.scss";
 @import "_buttons.scss";
+@import "_images.scss";
 @import "header.scss";
 @import "footer.scss";
 @import "pagination.scss";
@@ -11,6 +12,24 @@
 /* MAIN */
 body {
 	font-family: 'Roboto', sans-serif;
+}
+
+.row-offset {
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 2em;
+	margin-top: 1em;
+
+	ul li a:not(.active) {
+		border-bottom: 1px solid $black;
+		padding-bottom: 2px;
+	}
+
+	ul li a:not(.active):hover {
+		border-bottom: 0px solid $gram_red;
+		padding-bottom: 2px;
+	}
+
 }
 
 .press--header {
@@ -41,15 +60,11 @@ body {
 }
 
 .container{
-
+	box-sizing: border-box;
+	padding: 10px;
 }
 
 /* CONTENTBUILDER */
-img.cb-image {
-	display: block;
-	width: 100%;
-}
-
 .section {
 	padding: 25px 0 25px 0;
 
@@ -112,3 +127,6 @@ ul.timeline {
 .card--center {
 	margin: 50px auto 10px auto;
 }
+
+
+
