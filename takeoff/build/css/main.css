@@ -160,8 +160,9 @@ img.cb-image {
 .header a.active {
   color: #981C1F; }
   .header a.active:hover {
-    text-decoration: none;
-    border-bottom: 1px solid #fff; }
+    color: #981C1F !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid #fff !important; }
 
 .header nav {
   height: 100%; }
