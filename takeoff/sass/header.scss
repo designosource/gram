@@ -17,7 +17,7 @@
 		box-sizing: border-box;
 		border-bottom: 1px solid $white;
 
-		&:hover:not(.icon) {
+		&:hover:not(.icon):not(.home) {
 			text-decoration: none;
 			color: $gram_dark_grey;
 			border-bottom: 1px solid $gram_dark_grey;
