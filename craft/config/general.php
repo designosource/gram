@@ -28,7 +28,7 @@ return array(
 	'cpTrigger' => 'admin',
 
 	// Dev Mode (see https://craftcms.com/support/dev-mode)
-	'devMode' => true,
+	'devMode' => false,
 
 	//generate transforms before page load => no cpresources
 	'generateTransformsBeforePageLoad' => true,
