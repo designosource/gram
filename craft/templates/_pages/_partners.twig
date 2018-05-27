@@ -2,15 +2,29 @@
 
 {% block content %}
 
-	<div class="section">
+	<div class="partners section">
 		<div class="container">
 			<div class="grid">
 				<div class="row">
 					{% for item in craft.entries.section('partners').order('title ASC') %}
 						<div class="col-4">
-							<p style="cursor: default" class="link" data-toggle="tooltip" data-placement="bottom" title="{{ item.address }}">
-								{{ item.title }}
-							</p>
+							{% if item.website|length %}
+							<a href="{{ item.website }}" target="_blank" class="link" data-toggle="tooltip" data-placement="bottom" title="{{ item.address }}">
+							{% else %}
+							<div class="link" data-toggle="tooltip" data-placement="bottom" title="{{ item.address }}">
+							{% endif %}
+							
+								{% if item.logo|length %}
+									<img src="{{ siteUrl }}{{ item.logo.first().getUrl() }}">
+								{% endif %}
+								<p>
+									{{ item.title }}
+								</p>
+							{% if item.website|length %}
+							</a>
+							{% else %}
+							</div>
+							{% endif %}
 						</div>
 					{% endfor %}
 				</div>

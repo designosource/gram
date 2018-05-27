@@ -1,0 +1,33 @@
+.partners {
+	.col-4 {
+		//background-color: $gram_light_grey;
+		border: 5px solid $white;
+		box-sizing: border-box;
+		display: flex;
+  		align-items: center;
+
+  		a, div {
+  			display: block;
+  			width: 100%;
+  			cursor: pointer;
+
+  			&:hover {
+  				text-decoration: none;
+  				p {
+  					color: $gram_red;
+  				}
+  			}
+  		}
+	}
+
+	img {
+		display: block;
+		width: 50%;
+		margin: 10px auto;
+	}
+
+	p {
+		margin: 10px auto;
+		text-align: center;
+	}
+}
