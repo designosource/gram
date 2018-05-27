@@ -5,13 +5,16 @@
 {% if craft.request.param('year')|length %}
 	{% set yearParam = craft.request.param('year') %}
 {% else %}
-	{% set yearParam = "now"|date("Y") %}
+	{% set yearParam = "" %}
 {% endif %}
 
+{% set query = craft.request.getQuery() %}
+{% set selectedYear = query.year is defined ? query.year|abs : FALSE %}
+
 {% set years = [] %}
-{% for year in craft.entries.section('press') %}
-   	{% if year.date|date("Y") not in years %}
-    	{% set years = years|merge([year.date|date("Y")]) %}
+{% for year in craft.entries.section('press').order('postDate ASC') %}
+   	{% if year.postDate|date('Y') not in years %}
+    	{% set years = years|merge([year.postDate|date('Y')]) %}
    	{% endif %}
 {% endfor %}
 
@@ -30,14 +33,26 @@
 				</ul>
 			</div>
 			<div class="row">
-				{% paginate craft.entries.section('press').limit(6) as pageInfo, pageEntries %}
+				{% if selectedYear != false %}
+					{% set pressEntries = craft.entries({
+				        section: 'press',
+				        order: 'postDate ASC',
+				        postDate: 'and, >= ' ~ selectedYear ~ ', <= ' ~ (selectedYear + 1)
+				    }) %}
+			    {% else %}
+			    	{% set pressEntries = craft.entries({
+				        section: 'press',
+				        order: 'postDate ASC'
+				    }) %}
+			    {% endif %}
+
+				{% paginate pressEntries.limit(6) as pageInfo, pageEntries %}
 
 				{% for item in pageEntries %}
-				<div class="col-lg-4 news--div">
-					{% include '_snippet/_item/_news' %}
-				</div>
+					<div class="col-lg-4 news--div">
+						{% include '_snippet/_item/_news' %}
+					</div>
 				{% endfor %}
-
 			</div>
 		</div>
 

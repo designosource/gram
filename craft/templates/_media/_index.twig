@@ -2,17 +2,21 @@
 
 {% block content %}
 
+
 {% if craft.request.param('year')|length %}
 	{% set yearParam = craft.request.param('year') %}
 {% else %}
-	{% set yearParam = "now"|date("Y") %}
+	{% set yearParam = "" %}
 {% endif %}
 
+{% set query = craft.request.getQuery() %}
+{% set selectedYear = query.year is defined ? query.year|abs : FALSE %}
+
 {% set years = [] %}
-{% for year in craft.entries.section('mediaImage') %}
-	{% if year.date|date("Y") not in years %}
-		{% set years = years|merge([year.date|date("Y")]) %}
-	{% endif %}
+{% for year in craft.entries.section('mediaImage').order('postDate ASC') %}
+   	{% if year.postDate|date('Y') not in years %}
+    	{% set years = years|merge([year.postDate|date('Y')]) %}
+   	{% endif %}
 {% endfor %}
 
 	<div class="section section--default">
@@ -30,7 +34,21 @@
                     </ul>
                 </div>
 				<div class="row">
-          {% paginate craft.entries.section('mediaImage').limit(12) as pageInfo, pageEntries %}
+
+				{% if selectedYear != false %}
+					{% set mediaEntries = craft.entries({
+				        section: 'mediaImage',
+				        order: 'postDate ASC',
+				        postDate: 'and, >= ' ~ selectedYear ~ ', <= ' ~ (selectedYear + 1)
+				    }) %}
+			    {% else %}
+			    	{% set mediaEntries = craft.entries({
+				        section: 'mediaImage',
+				        order: 'postDate ASC'
+				    }) %}
+			    {% endif %}
+
+          		{% paginate mediaEntries.limit(12) as pageInfo, pageEntries %}
 				{% for media in pageEntries %}
 					{% for block in media.media %}
 						<div class="col-sm-3 news--div">
