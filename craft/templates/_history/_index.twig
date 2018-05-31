@@ -33,7 +33,7 @@
 				</div>
 			</div>
 			<h2>{{ yearParam }}</h2>
-			{% for item in entry.historieBuilder %}
+			{% for item in entry.historieBuilder.order('date ASC') %}
 				{% if item.date|date("Y") == yearParam %}
 					<div>
 						<h3>{{ item.date|date("F")|capitalize }}</h3>
