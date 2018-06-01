@@ -546,6 +546,14 @@ body {
       color: #3D3D3D; }
     .section--blue h2::before {
       display: none; }
+  .section--g {
+    background-image: url("../img/background-g.png");
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .section--g h2 {
+      color: #3D3D3D; }
+    .section--g h2::before {
+      display: none; }
   @media screen and (max-width: 1024px) {
     .section .container {
       max-width: 90%; } }

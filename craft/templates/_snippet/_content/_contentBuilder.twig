@@ -3,7 +3,7 @@
     {% case 'block' %}
         {% if row.children is not empty %}
             {% for block in row.children %}
-            <div class="section {% if block.color == 'blue' %}section--blue{% endif %}">
+            <div class="section {% if block.color == 'blue' %}section--blue{% elseif block.color == 'blueWithG' %}section--g{% endif %}">
                 <div class="container">
                     {% include '_snippet/_content/_block/_'~block.type.handle ignore missing %}
                 </div>
